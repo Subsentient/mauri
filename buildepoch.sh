@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Script to built the Epoch Init System.
 
 CMD()
