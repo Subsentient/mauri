@@ -1142,8 +1142,9 @@ static ReturnCode HandleEpochCommand(int argc, char **argv)
 		ShutdownMemBus(false); //We're done with membus now.
 		
 		char Compare[WARNING + 1][MEMBUS_MSGSIZE] = { MEMBUS_CODE_FAILURE " ", MEMBUS_CODE_ACKNOWLEDGED " ", MEMBUS_CODE_WARNING " "};
+		int Inc;
 		
-		for (int Inc = 0; Inc < sizeof Compare / sizeof *Compare; ++Inc)
+		for (Inc = 0; Inc < sizeof Compare / sizeof *Compare; ++Inc)
 		{
 			strcat(Compare[Inc], ArgIs("merge") ? MEMBUS_CODE_CFMERGE : MEMBUS_CODE_CFUMERGE);
 			strcat(Compare[Inc], " ");
